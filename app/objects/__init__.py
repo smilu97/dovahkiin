@@ -6,18 +6,20 @@
 
 import numpy as np
 
-from ..env import Environment
-
 class GameObject:
     '''
     Base class for game object
     ''' 
-    def __init__(self, env: Environment) -> None:
+    def __init__(self, env) -> None:
         self.env = env
         self.pos = np.zeros(2, dtype=np.int32)
         self.components = []
         self.env.objs.add(self)
         self._tag = None
+    
+    def update(self) -> None:
+        for component in self.components:
+            component.update()
     
     def destory(self) -> None:
     	for component in self.components:

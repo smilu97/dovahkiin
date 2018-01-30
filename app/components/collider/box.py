@@ -1,5 +1,6 @@
 
-from numpy as np
+import numpy as np
+
 from . import Collider
 from ...objects import GameObject
 from typing import List
@@ -17,7 +18,7 @@ class BoxCollider(Collider):
     Component checking collision between game object
     '''
     def __init__(self, obj: GameObject, size) -> None:
-        super().__init__(self, obj)
+        super().__init__(obj)
         self.collider_type = 'box'
         self.size = np.array([size[0], size[1]])
 

@@ -1,14 +1,15 @@
 
-from numpy as np
+import numpy as np
+
 from .. import Component
 from ...objects import GameObject
 
-class Collider(Component)
+class Collider(Component):
     '''
     Component checking collision between game object
     '''
     def __init__(self, obj: GameObject) -> None:
-        super().__init__(self, obj)
+        super().__init__(obj)
         obj.env.colliders.add(self)
         obj.collider = self
 
