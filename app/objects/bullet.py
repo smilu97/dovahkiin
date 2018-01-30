@@ -6,12 +6,10 @@ from ..components.collider.box import BoxCollider
 
 class Bullet(GameObject):
 
-	def __init__(self, env: Environment, size) -> None:
+	def __init__(self, env: Environment, size, tag='bullet') -> None:
 
 		super().__init__(self, env)
-		self.type = 'bullet'
-		self.collider = BoxCollider(self, size)
-		self.components.append(self.collider)
-		self.renderer = BoxRenderer(self, GREEN, size)
-		self.components.append(self.renderer)
+		self.tag = tag
+		self.components.append(BoxCollider(self, size))
+		self.components.append(BoxRenderer(self, GREEN, size))
 		self.components.append(BulletComponent(self))

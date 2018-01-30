@@ -1,10 +1,10 @@
 
 import pygame as pg
 
-from .. import Component
+from . import Renderer
 from ...objects import GameObject
 
-class BoxRenderer(Component):
+class BoxRenderer(Renderer):
     '''
     Component checking collision between game object
     '''

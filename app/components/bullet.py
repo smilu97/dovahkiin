@@ -10,7 +10,7 @@ class BulletComponent(Component):
 	def update(self) -> None:
 		unit = None
 		for obj in self.obj.collider.collidings:
-			if obj.type == 'unit':
+			if obj.tag == 'unit':
 				unit = obj
 				break
 		if unit is not None:

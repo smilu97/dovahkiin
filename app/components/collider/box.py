@@ -34,7 +34,7 @@ class BoxCollider(Collider):
     def find_colliding(self) -> List[GameObject]:
         result = []
         for collider in self.env.colliders:
-            func = ctype_to_func.get(collider.type)
+            func = ctype_to_func.get(collider.tag)
             if func is not None and func(self, collider):
                 result.append(collider.obj)
         return result

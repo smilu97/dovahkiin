@@ -10,6 +10,7 @@ class Collider(Component)
     def __init__(self, obj: GameObject) -> None:
         super().__init__(self, obj)
         obj.env.colliders.add(self)
+        obj.collider = self
 
     def update(self) -> None:
     	self.collidings = []
