@@ -13,10 +13,7 @@ class Collider(Component):
         obj.env.colliders.add(self)
         obj.collider = self
 
-    def update(self) -> None:
-    	self.collidings = []
-
-    def destroy(self) -> None:
+    def on_destroy(self) -> None:
     	self.obj.env.colliders.remove(self)
     
     

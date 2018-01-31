@@ -13,9 +13,12 @@ class Component:
 
     def update(self) -> None:
         pass
+    
+    def render(self) -> None:
+        pass
 
-    def destory(self) -> None:
-    	pass
+    def on_destroy(self) -> None:
+        pass
 
     def process(self, msg_type: str, *args, **kwargs) -> None:
     	pass

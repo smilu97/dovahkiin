@@ -13,7 +13,7 @@ class BoxRenderer(Renderer):
         self.color = color
         self.size = size
     
-    def update(self) -> None:
+    def render(self) -> None:
         surf = self.obj.env.surf
         if surf is None:
             return

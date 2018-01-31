@@ -8,6 +8,6 @@ class Renderer(Component):
         super().__init__(obj)
         obj.renderer = self
     
-    def update(self) -> None:
+    def render(self) -> None:
         pass
     

@@ -12,11 +12,12 @@ class DistinctContainer:
 
 	def add(self, obj) -> None:
 		key = self.get_new_key()
-		self.cont.insert(key, obj)
+		self.cont[key] = obj
 		obj._dc_key = key
 
 	def remove(self, obj) -> None:
-		self.cont.remove(obj._dc_key)
+		if self.cont.get(obj._dc_key) is not None:
+			self.cont.pop(obj._dc_key)
 	
 	def get(self, key) -> object:
 		return self.cont.get(key)

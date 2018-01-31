@@ -7,7 +7,7 @@ from ..components.render.box import BoxRenderer
 
 class Unit(GameObject):
 
-	def __init__(self, env: Environment, pos, size=(10,10), color='red', tag='unit') -> None:
+	def __init__(self, env=None, pos=(0,0), speed=0, size=(10,10), color='red', tag='unit') -> None:
 
 		super().__init__(env)
 
@@ -16,6 +16,14 @@ class Unit(GameObject):
 		self.pos[0] = pos[0]
 		self.pos[1] = pos[1]
 		self.tag = tag
-		self.components.append(BoxCollider(self, size))
-		self.components.append(BoxRenderer(self, r_color, size))
-		self.components.append(UnitComponent(self, color))
+		self.components.append(BoxCollider(self, size=size))
+		self.components.append(BoxRenderer(self, color=r_color, size=size))
+		self.components.append(
+			UnitComponent(
+				self,
+				speed=speed,
+				color=color,
+				size=size,
+				max_bullet=self.env.config.MAX_BULLET
+			)
+		)

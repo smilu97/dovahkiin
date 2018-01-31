@@ -12,19 +12,26 @@ class GameObject:
     ''' 
     def __init__(self, env) -> None:
         self.env = env
-        self.pos = np.zeros(2, dtype=np.int32)
+        self.pos = np.zeros(2, dtype=np.float32)
         self.components = []
-        self.env.objs.add(self)
         self._tag = None
+        self.agent = None
+    
+    def register_env(self, env) -> None:
+        self.env = env
     
     def update(self) -> None:
+        if self.agent is not None:
+            self.agent.make_decision()
         for component in self.components:
             component.update()
     
-    def destory(self) -> None:
-    	for component in self.components:
-    		component.destory()
-    	self.env.objs.remove(self)
+    def render(self) -> None:
+        for component in self.components:
+            component.render()
+
+    def destroy(self) -> None:
+        self.env.register_delete(self)
 
     def process(self, msg_type: str, *args, **kwargs) -> None:
     	for component in self.components:
@@ -36,6 +43,7 @@ class GameObject:
 
     @tag.setter
     def tag(self, value) -> None:
+        if self.env is None: return
         n_cont = self.env.tag_cont.get(value)
         if n_cont is None:
             return
