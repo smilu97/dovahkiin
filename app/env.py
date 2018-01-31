@@ -3,7 +3,7 @@ import random
 import pygame as pg
 
 from .containers.distinct import DistinctContainer
-from .objects import GameObject
+from .object import GameObject
 
 from typing import List
 

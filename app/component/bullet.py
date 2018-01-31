@@ -3,7 +3,7 @@ import math
 import numpy as np
 
 from . import Component
-from ..objects import GameObject
+from ..object import GameObject
 
 class BulletComponent(Component):
 	

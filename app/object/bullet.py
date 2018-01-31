@@ -1,9 +1,9 @@
 
 from ..env import Environment
 from . import GameObject
-from ..components.bullet import BulletComponent
-from ..components.collider.box import BoxCollider
-from ..components.render.box import BoxRenderer
+from ..component.bullet import BulletComponent
+from ..component.collider.box import BoxCollider
+from ..component.render.box import BoxRenderer
 
 class Bullet(GameObject):
 

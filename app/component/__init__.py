@@ -1,5 +1,5 @@
 
-from ..objects import GameObject
+from ..object import GameObject
 
 class Component:
     '''

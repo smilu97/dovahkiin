@@ -1,6 +1,6 @@
 
 from .. import Component
-from ...objects import GameObject
+from ...object import GameObject
 
 class Renderer(Component):
 

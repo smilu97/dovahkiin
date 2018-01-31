@@ -3,8 +3,8 @@ import numpy as np
 import math
 
 from . import Component
-from ..objects import GameObject
-from ..objects.bullet import Bullet
+from ..object import GameObject
+from ..object.bullet import Bullet
 
 class UnitComponent(Component):
 	

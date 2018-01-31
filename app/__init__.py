@@ -3,30 +3,31 @@ import sys
 import random
 
 from .env import Environment
-from .objects.unit import Unit
+from .object.unit import Unit
 from .config import Config
 
 class MyGame(Environment):
 
     def __init__(self, config: Config, *args, **kwargs) -> None:
         
-        super().__init__(config, *args, **kwargs)
+        super().__init__(config, tag_list=config.TAG_LIST, *args, **kwargs)
 
-        self.unit_1 = Unit(
+        self.red = []
+        self.blue = []
+
+        for _ in range(3):
+            self.red.append(self._make_new_unit('red'))
+            self.blue.append(self._make_new_unit('blue'))
+    
+    def _make_new_unit(self, color='red'):
+        res = Unit(
             self,
             pos=self._make_random_unit_pos(),
-            speed=config.UNIT_SPEED,
-            size=config.UNIT_SIZE,
-            color='red')
-        self.unit_2 = Unit(
-            self,
-            pos=self._make_random_unit_pos(),
-            speed=config.UNIT_SPEED,
-            size=config.UNIT_SIZE,
-            color='blue')
-
-        self.add_object(self.unit_1)
-        self.add_object(self.unit_2)
+            speed=self.config.UNIT_SPEED,
+            size=self.config.UNIT_SIZE,
+            color=color)
+        self.add_object(res)
+        return res
     
     def _make_random_unit_pos(self):
 

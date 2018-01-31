@@ -10,8 +10,11 @@ def main(argv):
     argc = len(argv)
     config = Config()
     env = Env(config)
-    agent_1 = RandomAgent(env.unit_1)
-    agent_2 = RandomAgent(env.unit_2)
+
+    for i in range(3):
+        RandomAgent(env.red[i])
+        RandomAgent(env.blue[i])
+        
     while not env.done:
         env.update()
 

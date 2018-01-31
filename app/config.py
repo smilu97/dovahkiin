@@ -10,3 +10,4 @@ class Config:
         self.FPS = 10
         self.SCREEN_SIZE = (400, 300)
         self.PRINTING = True
+        self.TAG_LIST = ('unit','bullet')

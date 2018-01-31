@@ -2,7 +2,7 @@
 import pygame as pg
 
 from . import Renderer
-from ...objects import GameObject
+from ...object import GameObject
 
 class BoxRenderer(Renderer):
     '''

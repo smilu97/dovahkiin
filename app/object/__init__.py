@@ -43,7 +43,6 @@ class GameObject:
 
     @tag.setter
     def tag(self, value) -> None:
-        if self.env is None: return
         n_cont = self.env.tag_cont.get(value)
         if n_cont is None:
             return
@@ -51,3 +50,4 @@ class GameObject:
             o_cont = self.tag_cont.get(self._tag)
             o_cont.remove(self)
         n_cont.add(self)
+        self._tag = value

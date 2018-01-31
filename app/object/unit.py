@@ -1,9 +1,9 @@
 
 from ..env import Environment
 from . import GameObject
-from ..components.unit import UnitComponent
-from ..components.collider.box import BoxCollider
-from ..components.render.box import BoxRenderer
+from ..component.unit import UnitComponent
+from ..component.collider.box import BoxCollider
+from ..component.render.box import BoxRenderer
 
 class Unit(GameObject):
 

@@ -2,7 +2,7 @@
 import numpy as np
 
 from . import Collider
-from ...objects import GameObject
+from ...object import GameObject
 from typing import List
 
 def check_colliding_with_box(coll_1: Collider, coll_2: Collider) -> bool:
@@ -39,4 +39,3 @@ class BoxCollider(Collider):
             func = ctype_to_func.get(collider.collider_type)
             if func is not None and func(self, collider):
                 self.cache.append(collider.obj)
-                print('hit: ({}, {})'.format(self.obj.pos, collider.obj.pos))
