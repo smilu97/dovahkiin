@@ -20,13 +20,10 @@ class BulletComponent(Component):
 
 		unit = None
 		for obj in self.obj.collider.collidings:
-			if obj.tag == 'unit':
-				unit = obj
-				break
-		if unit is not None:
-			unit.process('toggle_color')
-			self.obj.destroy()
-			return
+			if obj.tag == 'unit' and obj.unit.color != self.unit.color:
+				obj.process('toggle_color')
+				self.obj.destroy()
+				return
 
 		self.obj.pos += self.d_pos
 		if self.obj.pos[0] <= -self.size[0] or self.obj.pos[1] <= -self.size[1] or \

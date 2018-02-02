@@ -35,3 +35,12 @@ class MyGame(Environment):
             random.randint(0, self.config.SCREEN_SIZE[0] - self.config.UNIT_SIZE[0]),
             random.randint(0, self.config.SCREEN_SIZE[1] - self.config.UNIT_SIZE[1])
         )
+
+    def check_game_end(self):
+
+        color = self.red[0].unit.color
+        for unit in self.red + self.blue:
+            if unit.unit.color != color:
+                return False
+        print(color)
+        return True

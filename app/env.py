@@ -50,6 +50,10 @@ class Environment:
 			for k, obj in self.objs.iteritems():
 				obj.update()
 		
+		if self.check_game_end():
+			self.done = True
+			return
+		
 		for obj in self.delete_queue:
 			for component in obj.components:
 				component.on_destroy()
@@ -76,6 +80,9 @@ class Environment:
 			obj.render()
 		pg.display.flip()
 		self.clock.tick(self.fps)
+	
+	def check_game_end(self):
+		return False
 
 	def find_objects_by_tag(tag: str) -> List[GameObject]:
 		cont = self.tag_cont.get(tag)
