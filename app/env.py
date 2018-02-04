@@ -79,7 +79,7 @@ class Environment:
 		for k, obj in self.objs.iteritems():
 			obj.render()
 		pg.display.flip()
-		self.clock.tick(self.fps)
+		if self.fps != 0: self.clock.tick(self.fps)
 	
 	def check_game_end(self):
 		return False

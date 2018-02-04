@@ -7,7 +7,7 @@ class Config:
         self.BULLET_SIZE = (3,3)
         self.BULLET_SPEED = 10
         self.MAX_BULLET = 3
-        self.FPS = 10
+        self.FPS = 0
         self.SCREEN_SIZE = (400, 300)
         self.PRINTING = True
         self.TAG_LIST = ('unit','bullet')
