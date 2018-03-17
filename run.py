@@ -2,10 +2,10 @@
 
 import sys
 
-from app import MyGame as Env
-from app.config import Config
-from app.agent.random import RandomAgent
-from app.agent.simple import SimpleAgent
+from dovahkiin import MyGame as Env
+from dovahkiin.config import Config
+from dovahkiin.agent.random import RandomAgent
+from dovahkiin.agent.simple import SimpleAgent
 
 def main(argv):
     argc = len(argv)
