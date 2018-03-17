@@ -2,8 +2,8 @@
 import math
 import numpy as np
 
-from . import Component
-from ..object import GameObject
+from dovahkiin.component import Component
+from dovahkiin.object import GameObject
 
 class BulletComponent(Component):
 	

@@ -1,8 +1,10 @@
 
+import dovahkiin as dk
+
 import sys
 import random
 
-from .env import Environment
+from dk.env import Environment
 from .object.unit import Unit
 from .config import Config
 

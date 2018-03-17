@@ -2,8 +2,9 @@
 import numpy as np
 import math
 
-from . import Component
-from ..object import GameObject
+from dovahkiin.component import Component
+from dovahkiin.object import GameObject
+
 from ..object.bullet import Bullet
 
 class UnitComponent(Component):
