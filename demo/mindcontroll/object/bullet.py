@@ -1,10 +1,10 @@
 
 from dovahkiin.env import Environment
-from dovahkiin.object import GameObject
-from dovahkiin.component.collider.box import BoxCollider
-from dovahkiin.component.render.box import BoxRenderer
+from dovahkiin.gameobject import GameObject
+from dovahkiin.component import BoxCollider
+from dovahkiin.component import BoxRenderer
 
-from ..component.bullet import BulletComponent
+from component.bullet import BulletComponent
 
 class Bullet(GameObject):
 

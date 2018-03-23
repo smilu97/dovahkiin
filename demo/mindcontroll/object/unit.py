@@ -2,10 +2,9 @@
 
 
 from dovahkiin.env import Environment
-from dovahkiin.object import GameObject
-from dovahkiin.component.collider.box import BoxCollider
-from dovahkiin.component.render.box import BoxRenderer
-from ..component.unit import UnitComponent
+from dovahkiin.gameobject import GameObject
+from dovahkiin.component import BoxCollider, BoxRenderer
+from component.unit import UnitComponent
 
 class Unit(GameObject):
 

@@ -2,8 +2,8 @@
 import random
 import pygame as pg
 
-from .containers.distinct import DistinctContainer
-from .object import GameObject
+from .container import DistinctContainer
+from .gameobject import GameObject
 
 from typing import List
 

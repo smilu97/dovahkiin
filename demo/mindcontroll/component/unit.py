@@ -3,9 +3,9 @@ import numpy as np
 import math
 
 from dovahkiin.component import Component
-from dovahkiin.object import GameObject
+from dovahkiin.gameobject import GameObject
 
-from ..object.bullet import Bullet
+from object.bullet import Bullet
 
 class UnitComponent(Component):
 	

@@ -3,7 +3,7 @@ import math
 import numpy as np
 
 from dovahkiin.component import Component
-from dovahkiin.object import GameObject
+from dovahkiin.gameobject import GameObject
 
 class BulletComponent(Component):
 	
